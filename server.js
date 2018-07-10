@@ -1,16 +1,17 @@
 const express = require('express');
 const app = express();
 
-app.get("/:filename", (req, res) => {
-    res.sendFile(__dirname + `/assets${req.path}.svg`);
+app.get("/icon/:filename", (req, res) => {
+    res.sendFile(__dirname + `/assets/${req.params.filename}.svg`);
 });
 
-app.get("/list", (req, res) => {
+app.get("/icons/list", (req, res) => {
     res.sendFile(__dirname + '/list.json');
+    console.log(req.path)
 });
 
-app.post("/add/:filename", (req,res) => {
-    console.log(req);
+app.post("/icon/add/:filename", (req,res) => {
+    console.log(req.path)
 });
 
 app.listen(3000, () => console.log('Server listening on port 3000...'));
