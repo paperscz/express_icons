@@ -7,11 +7,10 @@ app.get("/icon/:filename", (req, res) => {
 
 app.get("/icons/list", (req, res) => {
     res.sendFile(__dirname + '/list.json');
-    console.log(req.path)
 });
 
 app.post("/icon/add/:filename", (req,res) => {
-    console.log(req.path)
+    
 });
 
 app.listen(3000, () => console.log('Server listening on port 3000...'));
